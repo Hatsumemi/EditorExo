@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -7,14 +8,15 @@ public class Map : MonoBehaviour
    [SerializeField]private int _width;
 
    [SerializeField]private Tilemap _tilemap;
-   [SerializeField]private Tile _tile;
+   [SerializeField]private List<Tile> _tile;
    private void Start()
    {
-      for (int y = -_height/2; y < _height/2; y++)
+      for (int y = 0; y < _height; y++)
       {
-         for (int x = -_width/2; x < _width/2; x++)
+         for (int x = 0; x < _width; x++)
          {
-            _tilemap.SetTile(new Vector3Int(x, y, 0), _tile);
+            int r = Random.Range(0, _tile.Count);
+            _tilemap.SetTile(new Vector3Int(x, y, 0), _tile[r]);
          }
       }
    }
