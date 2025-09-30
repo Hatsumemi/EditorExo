@@ -9,7 +9,13 @@ public class Map : MonoBehaviour
    [SerializeField]private int _width;
 
    [SerializeField]private Tilemap _tilemap;
-   [FormerlySerializedAs("_tile")] [SerializeField]private List<Tile> _tiles;
+   [SerializeField]private List<Tile> _tiles;
+   
+   [SerializeField]private GameObject _prefabsButton;
+   [SerializeField]private List<ChangeTilePaint> _changeTilePaints;
+   [SerializeField]private GameObject _buttonParents;
+   
+   
    
    private void Start()
    {
@@ -21,6 +27,15 @@ public class Map : MonoBehaviour
             _tilemap.SetTile(new Vector3Int(x, y, 0), _tiles[r]);
          }
       }
+
+      foreach (var tile in _tiles)
+      {
+         GameObject button = Instantiate(_prefabsButton);
+         button.transform.SetParent(_buttonParents.transform);
+         _changeTilePaints.Add(button.GetComponent<ChangeTilePaint>());
+         button.GetComponent<ChangeTilePaint>().Tile = tile;
+      }
+      
    }
    
 }

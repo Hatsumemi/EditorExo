@@ -2,12 +2,14 @@ using System;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Serialization;
 using UnityEngine.Tilemaps;
+using UnityEngine.UI;
 
 public class PaintingMap : MonoBehaviour
 {
     [SerializeField] private Tilemap _tileMap;
-    [SerializeField] private Tile _tileToPaint;
+    [FormerlySerializedAs("_tileToPaint")] public Tile _replacementTile;
 
 
     private void Update()
@@ -21,7 +23,6 @@ public class PaintingMap : MonoBehaviour
         Vector3 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector3Int cellPos = _tileMap.WorldToCell(pos);
 
-        if (_tileMap.HasTile(cellPos))
-            _tileMap.SetTile(cellPos, _tileToPaint);
+            _tileMap.SetTile(cellPos, _replacementTile);
     }
 }
