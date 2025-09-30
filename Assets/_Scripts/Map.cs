@@ -11,6 +11,7 @@ public class Map : MonoBehaviour
    [SerializeField]private int _width;
 
    [SerializeField]private Tilemap _tilemap;
+   [SerializeField]private List<Tile> _tilesForMap;
    [SerializeField]private List<Tile> _tiles;
    
    [SerializeField]private GameObject _prefabsButton;
@@ -25,8 +26,8 @@ public class Map : MonoBehaviour
       {
          for (int x = 0; x < _width; x++)
          {
-            int r = Random.Range(0, _tiles.Count);
-            _tilemap.SetTile(new Vector3Int(x, y, 0), _tiles[r]);
+            int r = Random.Range(0, _tilesForMap.Count);
+            _tilemap.SetTile(new Vector3Int(x, y, 0), _tilesForMap[r]);
          }
       }
 
