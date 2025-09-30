@@ -235,6 +235,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1214877319}
   - component: {fileID: 1214877318}
+  - component: {fileID: 1214877320}
   m_Layer: 0
   m_Name: Scripts
   m_TagString: Untagged
@@ -257,7 +258,7 @@ MonoBehaviour:
   _height: 100
   _width: 100
   _tilemap: {fileID: 1450533029}
-  _tile:
+  _tiles:
   - {fileID: 11400000, guid: 971056350defcab4780bc50b7386cfdd, type: 2}
   - {fileID: 11400000, guid: c139de4e9469c12479d96af4358c94da, type: 2}
   - {fileID: 11400000, guid: 90604adf52b2e1040a5ed3c6fa8566d5, type: 2}
@@ -283,6 +284,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1214877320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1214877317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ded1eb1193d00f445807fd2feac5909c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _tileMap: {fileID: 1450533029}
+  _tileToPaint: {fileID: 11400000, guid: 7b782061a546e194996d2b18c536a26e, type: 2}
 --- !u!1 &1301656226
 GameObject:
   m_ObjectHideFlags: 0
