@@ -5,6 +5,8 @@ using UnityEngine.Tilemaps;
 
 public class Map : MonoBehaviour
 {
+   public PaintingMap _paintingMap;
+   
    [SerializeField]private int _height;
    [SerializeField]private int _width;
 
@@ -33,6 +35,7 @@ public class Map : MonoBehaviour
          GameObject button = Instantiate(_prefabsButton);
          button.transform.SetParent(_buttonParents.transform);
          _changeTilePaints.Add(button.GetComponent<ChangeTilePaint>());
+         button.GetComponent<ChangeTilePaint>().PaintingMap = _paintingMap;
          button.GetComponent<ChangeTilePaint>().Tile = tile;
       }
       

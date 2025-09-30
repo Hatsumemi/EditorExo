@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class ChangeTilePaint : MonoBehaviour
 {
-    [SerializeField]private PaintingMap _paintingMap;
+    public PaintingMap PaintingMap;
     
     public Tile Tile;
     [SerializeField]private Image _buttonImage;
@@ -19,6 +19,6 @@ public class ChangeTilePaint : MonoBehaviour
 
     public void ChangeTile()
     {
-        _paintingMap._replacementTile = Tile;
+        PaintingMap._replacementTile = Tile;
     }
 }

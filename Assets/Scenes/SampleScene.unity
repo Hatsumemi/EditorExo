@@ -694,6 +694,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10f1b1b91c3b73a4da3891f40450691c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _paintingMap: {fileID: 1214877320}
   _height: 100
   _width: 100
   _tilemap: {fileID: 1450533029}
